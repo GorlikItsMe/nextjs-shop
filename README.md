@@ -57,7 +57,7 @@ https://vercel.com/guides/nextjs-prisma-postgres
 
 ```bash
 CREATE DATABASE nextjsshopdb;
-CREATE USER 'nextjsshop'@'%' IDENTIFIED BY 'fidsy@iuh8F!DUYGfds8f8s743h7fd';
+CREATE USER 'nextjsshop'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON nextjsshopdb . * TO 'nextjsshop'@'%';
 FLUSH PRIVILEGES;
 ```
