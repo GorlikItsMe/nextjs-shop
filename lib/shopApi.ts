@@ -12,6 +12,7 @@ export interface CartProduct {
 }
 
 export async function getCart(cartId: number): Promise<CartProduct[]> {
+  // todo jeżeli cart nie istnieje, dodaj nowy
   const cart = await prisma.order.findFirst({
     where: { id: cartId },
     include: {
