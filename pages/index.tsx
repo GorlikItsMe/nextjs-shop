@@ -6,7 +6,6 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
-import { MDBBtn } from 'mdb-react-ui-kit'
 
 export default function Home({
   allPostsData
@@ -27,7 +26,7 @@ export default function Home({
         <p>
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a><br />
-          <MDBBtn>Button</MDBBtn>.)
+          <button className="ripple ripple-surface btn btn-primary" role="button">Button</button>.)
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
