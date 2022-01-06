@@ -90,42 +90,45 @@ export default function Navbar() {
     </MDBNavbar>
 
     {/* MODAL */}
-    <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
-      <MDBModalDialog>
-        <MDBModalContent>
-          <MDBModalHeader>
-            <MDBModalTitle><MDBIcon fas icon='shopping-cart'></MDBIcon> Twój koszyk</MDBModalTitle>
-            <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-          </MDBModalHeader>
-          <MDBModalBody>
-            {/* BRAK PRODUKTÓW W KOSZTYKU */}
-            <div className="alert alert-danger" role="alert" data-mdb-color="danger">
-              Brak produktów w koszyku
-            </div>
+    {basicModal &&
+      <MDBModal show={true} setShow={setBasicModal} tabIndex='-1'>
+        <MDBModalDialog>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle><MDBIcon fas icon='shopping-cart'></MDBIcon> Twój koszyk</MDBModalTitle>
+              <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
+            </MDBModalHeader>
+            <MDBModalBody>
+              {/* BRAK PRODUKTÓW W KOSZTYKU */}
+              <div className="alert alert-danger" role="alert" data-mdb-color="danger">
+                Brak produktów w koszyku
+              </div>
 
-            {/* Produkt w koszyku */}
-            <MDBContainer>
-              <MDBRow>
-                <MDBCol size='md-6' className='col-example'>
-                  HUAWEI P30 PRO
-                </MDBCol>
-                <MDBCol size='md-6' className='col-example'>
-                  Cena: 2333.00 zł
-                </MDBCol>
-              </MDBRow>
-            </MDBContainer>
-            <hr />
-            Kwota do zapłaty: 2333.00 zł
-          </MDBModalBody>
+              {/* Produkt w koszyku */}
+              <MDBContainer>
+                <MDBRow>
+                  <MDBCol size='md-6' className='col-example'>
+                    HUAWEI P30 PRO
+                  </MDBCol>
+                  <MDBCol size='md-6' className='col-example'>
+                    Cena: 2333.00 zł
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+              <hr />
+              Kwota do zapłaty: 2333.00 zł
+            </MDBModalBody>
 
-          <MDBModalFooter>
-            <MDBBtn color='danger' onClick={toggleShow}>
-              <MDBIcon fas icon='times'></MDBIcon> Zamknij
-            </MDBBtn>
-            <MDBBtn color='success'>Przejdź do zamówienia <MDBIcon fas icon='long-arrow-alt-right'></MDBIcon></MDBBtn>
-          </MDBModalFooter>
-        </MDBModalContent>
-      </MDBModalDialog>
-    </MDBModal></>
+            <MDBModalFooter>
+              <MDBBtn color='danger' onClick={toggleShow}>
+                <MDBIcon fas icon='times'></MDBIcon> Zamknij
+              </MDBBtn>
+              <MDBBtn color='success'>Przejdź do zamówienia <MDBIcon fas icon='long-arrow-alt-right'></MDBIcon></MDBBtn>
+            </MDBModalFooter>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
+    }
+  </>
   );
 }
