@@ -3,7 +3,8 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
-import Navbar from './navbar'
+import Navbar from './Navbar'
+import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 
 const name = '[Your Name]'
 export const siteTitle = 'Next.js Sample Website'
@@ -16,7 +17,7 @@ export default function Layout({
   home?: boolean
 }) {
   return (
-    <div className="container-fluid">
+    <MDBContainer fluid>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -36,6 +37,6 @@ export default function Layout({
         <Navbar />
       </header>
       <main>{children}</main>
-    </div>
+    </MDBContainer>
   )
 }

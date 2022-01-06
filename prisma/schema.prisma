@@ -23,7 +23,49 @@ model Product {
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  Int
   createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @updatedAt @map(name: "updated_at")
+  updatedAt   DateTime @default(now()) @updatedAt @map(name: "updated_at")
 
+  OrderProduct OrderProduct[]
   @@map(name: "products")
+}
+
+model Customer {
+  // Dane klienta
+  id    Int    @id @default(autoincrement())
+  email String
+
+  firstName  String
+  lastName   String
+  street     String
+  city       String
+  postalCode String
+
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map(name: "updated_at")
+  Orders    Order[]
+}
+
+model Order {
+  // Dane zamówienia
+  id         Int       @id @default(autoincrement())
+  Customer   Customer? @relation(fields: [customerId], references: [id])
+  customerId Int?
+  totalCost  Decimal
+
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map(name: "updated_at")
+
+  OrderProduct OrderProduct[]
+  @@map(name: "orders")
+}
+
+model OrderProduct {
+  // Powiązanie zamówienia z produktem
+  id      Int    @id @default(autoincrement())
+  Order   Order? @relation(fields: [orderId], references: [id])
+  orderId Int?
+
+  Product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  amount    Int
 }

@@ -53,17 +53,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
 https://vercel.com/guides/nextjs-prisma-postgres
 
-## Database User
+## Database
 
 ```bash
-CREATE DATABASE nextjsshopdb;
-CREATE USER 'nextjsshop'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON nextjsshopdb . * TO 'nextjsshop'@'%';
-FLUSH PRIVILEGES;
-```
-
-After that run to propagate database
-
-```bash
-npx prisma db push
+yarn db:migrate
+yarn db:push
 ```
