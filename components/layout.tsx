@@ -35,6 +35,15 @@ export default function Layout({
       </Head>
       <header>
         <Navbar />
+        <div className='p-5 text-center bg-light'>
+        <h1 className='mb-3'>Witamy na sklepie!</h1>
+        <h4 className='mb-3'>Zachęcamy do zakupów</h4><br />
+        <h4 className='mb-3'>Kod promocyjny: WELCOME15*</h4>
+        <p className='mb-3'>*Kod obniża cenę o 15% przy zakupach za min. 100zł</p>
+        <a className='btn btn-primary' href='' role='button'>
+          Sprawdź produkty
+        </a>
+      </div>
       </header>
       <main>{children}</main>
     </MDBContainer>

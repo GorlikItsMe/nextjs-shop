@@ -5,6 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
+import NewProducts from '../components/NewProducts'
 
 export default function Home({
   allPostsData
@@ -20,7 +21,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-
+      <NewProducts />
     </Layout>
   )
 }
