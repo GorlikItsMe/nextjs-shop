@@ -6,6 +6,8 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import NewProducts from '../components/NewProducts'
+import TopBuy from '../components/TopBuy'
+import ProductSale from '../components/ProductsSale'
 
 export default function Home({
   allPostsData
@@ -22,6 +24,8 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <NewProducts />
+      <TopBuy />
+      <ProductSale />
     </Layout>
   )
 }

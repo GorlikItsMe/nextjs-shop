@@ -2,10 +2,10 @@ import React from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBRipple, MDBIcon } from 'mdb-react-ui-kit';
 import style from './NewProducts.module.css'
 
-export default function NewProducts() {
+export default function ProductSale() {
     return (
         <MDBContainer className="mt-5 text-center">
-            <h4 className='section-title mb-5'><MDBIcon fas icon='plus'></MDBIcon> Nowe produkty</h4>
+            <h4 className='section-title mb-5'><MDBIcon fas icon='percent'></MDBIcon> Promocje</h4>
             <MDBRow>
                 <MDBCol size='md' className='col-example'>
                     <MDBCard className={style.card}>

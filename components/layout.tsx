@@ -4,6 +4,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Navbar from './Navbar'
+import Footer from './Footer'
 import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 
 const name = '[Your Name]'
@@ -46,6 +47,7 @@ export default function Layout({
       </div>
       </header>
       <main>{children}</main>
+      <Footer />
     </MDBContainer>
   )
 }
