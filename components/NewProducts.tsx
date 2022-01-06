@@ -1,12 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBRipple, MDBIcon } from 'mdb-react-ui-kit';
 import style from './NewProducts.module.css'
+import { ApiCategoryDetail } from '../lib/shopApiTypes';
+import Link from 'next/link';
 
 export default function NewProducts() {
+    const [categoryDetail, setCategoryDetail] = useState<ApiCategoryDetail>(null)
+    useEffect(() => {
+        fetch('/api/category/1')
+            .then(r => r.json())
+            .then((data) => setCategoryDetail(data))
+    }, [])
+
     return (
         <MDBContainer className="mt-5 text-center">
             <h4 className='section-title mb-5'><MDBIcon fas icon='plus'></MDBIcon> Nowe produkty</h4>
             <MDBRow>
+                {categoryDetail && categoryDetail.Product.map((p) => {
+                    return (
+                        <MDBCol key={p.id} size='md' className='col-example'>
+                            <MDBCard className={style.card}>
+                                <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
+                                    <MDBCardImage src='https://consumer.huawei.com/content/dam/huawei-cbg-site/cee-nordics/pl/mkt/pdp/phones/p30-pro/img/p30-pro-blue.png' fluid alt='...' />
+                                    <a>
+                                        <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
+                                    </a>
+                                </MDBRipple>
+                                <MDBCardBody>
+                                    <MDBCardTitle>{p.name}</MDBCardTitle>
+                                    <MDBCardText className={style.cardText}>
+                                        { p.desc }
+                                        {/* <ul style={{ textAlign: 'left' }}>
+                                            <li>Ekran: 6,47 cali, OLED, FHD + 2 340 x 1 080</li>
+                                            <li>Procesor: Ośmiordzeniowy procesor HUAWEI Kirin 980</li>
+                                            <li>Odporność: IP68</li>
+                                            <li>System: EMUI 9.1 (na podstawie Android 9)</li>
+                                            <li>Pamięć: 6 GB RAM + 128 GB ROM</li>
+                                            <li>Bateria: 4 200 mAh</li>
+                                            <li>Aparat: Przedni - 40 MP, Tylni - 32MP</li>
+                                        </ul> */}
+                                        <h4>Cena: {p.price} zł</h4>
+                                    </MDBCardText>
+                                    <Link href={`/product/${p.id}`}>
+                                        <MDBBtn><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                                    </Link>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    )
+                })}
                 <MDBCol size='md' className='col-example'>
                     <MDBCard className={style.card}>
                         <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
