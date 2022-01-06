@@ -2,8 +2,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
+    "db:generate": "npx prisma generate",
     "db:studio": "npx prisma studio",
     "db:migrate": "npx prisma migrate dev",
     "db:push": "npx prisma db push"
