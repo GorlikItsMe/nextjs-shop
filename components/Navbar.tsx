@@ -120,10 +120,10 @@ export default function Navbar() {
             </MDBModalBody>
 
             <MDBModalFooter>
-              <MDBBtn color='danger' onClick={toggleShow}>
+              <MDBBtn outline rounded className='mx-2' color='danger' onClick={toggleShow}>
                 <MDBIcon fas icon='times'></MDBIcon> Zamknij
               </MDBBtn>
-              <MDBBtn color='success'>Przejdź do zamówienia <MDBIcon fas icon='long-arrow-alt-right'></MDBIcon></MDBBtn>
+              <MDBBtn outline rounded color='success'>Przejdź do zamówienia <MDBIcon fas icon='long-arrow-alt-right'></MDBIcon></MDBBtn>
             </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>

@@ -42,7 +42,7 @@ export default function NewProducts() {
                                         <h4>Cena: {p.price} zł</h4>
                                     </MDBCardText>
                                     <Link href={`/product/${p.id}`}>
-                                        <MDBBtn><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                                        <MDBBtn outline rounded><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                                     </Link>
                                 </MDBCardBody>
                             </MDBCard>
@@ -71,7 +71,7 @@ export default function NewProducts() {
                                 </ul>
                                 <h4>Cena: 2333.00 zł</h4>
                             </MDBCardText>
-                            <MDBBtn href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                            <MDBBtn outline rounded href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
@@ -97,7 +97,7 @@ export default function NewProducts() {
                                 </ul>
                                 <h4>Cena: 1290.00 zł</h4>
                             </MDBCardText>
-                            <MDBBtn href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                            <MDBBtn outline rounded href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
@@ -123,7 +123,7 @@ export default function NewProducts() {
                                 </ul>
                                 <h4>Cena: 4299.00 zł</h4>
                             </MDBCardText>
-                            <MDBBtn href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                            <MDBBtn outline rounded href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>

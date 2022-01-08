@@ -21,9 +21,37 @@ export default function ProductPreview() {
                             Uchwyć najlepsze chwile i stwórz własną wizję przyszłości. HUAWEI P30 Pro wprowadza nową jakość w fotografii z wykorzystaniem smartfonów.<br />
                             <img src='https://consumer-img.huawei.com/content/dam/huawei-cbg-site/cee-nordics/pl/mkt/pdp/phones/p30-pro/img/p30-pro-6ksp.png' className='img-fluid shadow-4' alt='...' />
                         </p>
-                        <MDBBtn href='#' className="btn-lg"><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                        <MDBBtn outline rounded href='#' className="btn-lg"><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         <hr />
-                        <p>Udostępnij: <MDBIcon fab icon='facebook-messenger'></MDBIcon> <MDBIcon fab icon='facebook-f'></MDBIcon> <MDBIcon fas icon='link'></MDBIcon></p>
+                        <p>
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#3b5998' }} href='#'>
+                                <MDBIcon fab icon='facebook-f' />
+                            </MDBBtn>
+
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#55acee' }} href='#'>
+                                <MDBIcon fab icon='twitter' />
+                            </MDBBtn>
+
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#dd4b39' }} href='#'>
+                                <MDBIcon fab icon='google' />
+                            </MDBBtn>
+
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#ac2bac' }} href='#'>
+                                <MDBIcon fab icon='instagram' />
+                            </MDBBtn>
+
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#ed302f' }} href='#'>
+                                <MDBIcon fab icon='youtube' />
+                            </MDBBtn>
+
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#481449' }} href='#'>
+                                <MDBIcon fab icon='slack-hash' />
+                            </MDBBtn>
+
+                            <MDBBtn className='m-1' style={{ backgroundColor: '#25d366' }} href='#'>
+                                <MDBIcon fab icon='whatsapp' />
+                            </MDBBtn>
+                        </p>
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>

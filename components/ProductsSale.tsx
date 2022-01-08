@@ -29,7 +29,7 @@ export default function ProductSale() {
                                 </ul>
                                 <h4>Cena: 2333.00 zł</h4>
                             </MDBCardText>
-                            <MDBBtn href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                            <MDBBtn outline rounded href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
@@ -55,7 +55,7 @@ export default function ProductSale() {
                                 </ul>
                                 <h4>Cena: 1290.00 zł</h4>
                             </MDBCardText>
-                            <MDBBtn href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                            <MDBBtn outline rounded href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
@@ -81,7 +81,7 @@ export default function ProductSale() {
                                 </ul>
                                 <h4>Cena: 4299.00 zł</h4>
                             </MDBCardText>
-                            <MDBBtn href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
+                            <MDBBtn outline rounded href='#'><MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
