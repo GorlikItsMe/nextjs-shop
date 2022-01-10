@@ -20,12 +20,7 @@ export default function Footer() {
 
             <ul className='list-unstyled mb-0'>
               <li>
-                <a href='#!' className='text-dark'>
-                  Twój profil
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-dark'>
+                <a href='/' className='text-dark'>
                   Strona Główna
                 </a>
               </li>
@@ -35,7 +30,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href='#!' className='text-dark'>
+                <a href='/kontakt' className='text-dark'>
                   Kontakt
                 </a>
               </li>
@@ -47,12 +42,12 @@ export default function Footer() {
 
             <ul className='list-unstyled'>
               <li>
-                <a href='#!' className='text-dark'>
+                <a href='/politykaPrywatnosci' className='text-dark'>
                   Polityka Prywatności
                 </a>
               </li>
               <li>
-                <a href='#!' className='text-dark'>
+                <a href='/regulamin' className='text-dark'>
                   Regulamin Sklepu
                 </a>
               </li>

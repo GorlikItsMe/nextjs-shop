@@ -49,7 +49,7 @@ export default function Navbar() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='#'>
+              <MDBNavbarLink active aria-current='page' href='/'>
                 <MDBIcon fas icon='home'></MDBIcon> Strona Główna
               </MDBNavbarLink>
             </MDBNavbarItem>
@@ -74,7 +74,7 @@ export default function Navbar() {
             </MDBNavbarItem>
 
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink>
+              <MDBNavbarLink href='/kontakt'><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink onClick={toggleShow}>
