@@ -13,7 +13,7 @@ async function cartIdCookieCheck(req: NextApiRequest) {
         id: "desc",
       },
     });
-    cartId = lastCart.id;
+    cartId = lastCart.id += 1;
     console.log("Create new cart_id");
     return cartId; // nowe ciasteczko
   } else {
