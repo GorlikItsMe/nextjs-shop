@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../../components/layout'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput } from 'mdb-react-ui-kit';
 import { GetServerSideProps } from 'next';
 import { getProductById, ShopApiProduct } from '../../lib/shopApi';
 
@@ -41,10 +41,18 @@ export default function ProductPreview({ product }: { product: ShopApiProduct })
                         <div>
                             <div style={{ textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: product.desc }} />
                         </div>
-
-                        <MDBBtn outline rounded href='#' className="btn-lg" onClick={addToCart}>
-                            <MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka
-                        </MDBBtn>
+                        <MDBContainer>
+                            <MDBRow className="text-center">
+                                <MDBCol size='md-6' className='col-example'>
+                                    <MDBInput label='Ilość' id='typeNumber' type='number' min='1' value='1'/>
+                                </MDBCol>
+                                <MDBCol size='md-6' className='col-example'>
+                                    <MDBBtn outline rounded href='#' className="btn-lg" onClick={addToCart}>
+                                        <MDBIcon fas icon='cart-plus'></MDBIcon> Dodaj do koszyka
+                                    </MDBBtn>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
                         <hr />
                         <p>
                             <MDBBtn className='m-1' style={{ backgroundColor: '#3b5998' }} href='#'>
