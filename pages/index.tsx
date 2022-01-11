@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { ApiCategory } from '../lib/shopApiTypes'
@@ -10,15 +9,7 @@ import { Category } from '@prisma/client'
 import ProductsContainer from '../components/ProductsContainer'
 import { MDBIcon } from 'mdb-react-ui-kit'
 
-export default function Home({
-  allPostsData
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) {
+export default function Home() {
   const [categoryList, setCategoryList] = useState<Category[]>(null)
   useEffect(() => {
     fetch('/api/category')
@@ -58,13 +49,4 @@ export default function Home({
       }
     </Layout>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
 }

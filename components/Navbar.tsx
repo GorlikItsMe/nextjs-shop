@@ -26,6 +26,7 @@ import {
   MDBRow,
   MDBCol
 } from 'mdb-react-ui-kit';
+import Link from 'next/link'
 
 export default function Navbar() {
   const [showBasic, setShowBasic] = useState(false);
@@ -35,7 +36,9 @@ export default function Navbar() {
   return (<>
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='#'>Sklep NextJS</MDBNavbarBrand>
+        <Link href="/">
+          <MDBNavbarBrand>Sklep NextJS</MDBNavbarBrand>
+        </Link>
 
         <MDBNavbarToggler
           aria-controls='navbarSupportedContent'
@@ -49,12 +52,16 @@ export default function Navbar() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='/'>
-                <MDBIcon fas icon='home'></MDBIcon> Strona Główna
-              </MDBNavbarLink>
+              <Link href="/">
+                <MDBNavbarLink active aria-current='page'>
+                  <MDBIcon fas icon='home'></MDBIcon> Strona Główna
+                </MDBNavbarLink>
+              </Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'><MDBIcon fas icon='store-alt'></MDBIcon> Sklep</MDBNavbarLink>
+              <Link href="/">
+                <MDBNavbarLink><MDBIcon fas icon='store-alt'></MDBIcon> Sklep</MDBNavbarLink>
+              </Link>
             </MDBNavbarItem>
 
             <MDBNavbarItem>
@@ -74,7 +81,9 @@ export default function Navbar() {
             </MDBNavbarItem>
 
             <MDBNavbarItem>
-              <MDBNavbarLink href='/kontakt'><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink>
+              <Link href="/kontakt">
+                <MDBNavbarLink><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink>
+              </Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink onClick={toggleShow}>
