@@ -23,7 +23,7 @@ export interface ShopApiProduct {
 export async function getProductById(
   productId: number
 ): Promise<ShopApiProduct> {
-  let productObj = await prisma.product.findFirst({
+  const productObj = await prisma.product.findFirst({
     where: {
       id: productId,
       published: true,
@@ -39,9 +39,11 @@ export async function getProductById(
       price: true,
     },
   });
+
   // dumb fix, json dont like decimal
-  productObj.price = parseFloat(productObj.price as unknown as string);
-  return productObj;
+  let pObj: ShopApiProduct = productObj as unknown as ShopApiProduct;
+  pObj.price = parseFloat(productObj.price as unknown as string);
+  return pObj;
 }
 
 export async function getCart(cartId: number): Promise<CartProduct[]> {
@@ -67,7 +69,7 @@ export async function getCart(cartId: number): Promise<CartProduct[]> {
       name: p.name,
       desc: p.desc,
       imageLink: p.imageLink,
-      price: p.price,
+      price: p.price as unknown as number,
       amount: op.amount,
       categoryId: p.categoryId,
       categoryName: p.category.name,
