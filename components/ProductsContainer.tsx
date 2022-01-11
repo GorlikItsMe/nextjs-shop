@@ -18,7 +18,7 @@ export default function ProductsContainer({ title, categoryId, titleIcon }: { ti
 
     return (
         <MDBContainer className="mt-5 text-center">
-            <h4 className='section-title mb-5'>{titleIcon} {title}</h4>
+            <div className='section-title mb-5'>{titleIcon} {title}</div>
             <MDBRow>
                 {categoryDetail && categoryDetail.Product.map((p) => {
                     return (
@@ -26,9 +26,7 @@ export default function ProductsContainer({ title, categoryId, titleIcon }: { ti
                             <MDBCard className={style.card}>
                                 <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
                                     <MDBCardImage src={p.imageLink} fluid alt='...' />
-                                    <a>
-                                        <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
-                                    </a>
+                                    <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
                                 </MDBRipple>
                                 <MDBCardBody>
                                     <MDBCardTitle>{p.name}</MDBCardTitle>
