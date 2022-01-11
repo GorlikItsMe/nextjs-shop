@@ -24,6 +24,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           id: true,
           name: true,
           desc: true,
+          imageLink: true,
           price: true,
         },
       },

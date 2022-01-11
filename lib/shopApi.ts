@@ -33,6 +33,7 @@ export async function getCart(cartId: number): Promise<CartProduct[]> {
       id: p.id,
       name: p.name,
       desc: p.desc,
+      imageLink: p.imageLink,
       price: p.price,
       amount: op.amount,
       categoryId: p.categoryId,

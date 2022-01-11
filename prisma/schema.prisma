@@ -16,7 +16,8 @@ model Category {
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
-  desc        String
+  desc        String   @db.VarChar(500)
+  imageLink   String   @default("/images/no_image.jpg")
   published   Boolean  @default(false)
   price       Decimal  @default(9.99)
   stockAmount Int      @default(100)
