@@ -23,6 +23,17 @@ export default function Navbar() {
   const [showBasic, setShowBasic] = useState(false);
   const [basicModal, setBasicModal] = useState(false);
   const toggleShow = () => setBasicModal(!basicModal);
+  const [_document, set_document] = useState(null)
+
+  useEffect(() => {
+    set_document(document)
+  }, [])
+
+  const openCart = () => setBasicModal(true);
+
+  if (_document) {
+    (window as Window & typeof globalThis & { openCart }).openCart = openCart
+  }
 
   return (<>
     <MDBNavbar expand='lg' light bgColor='light'>

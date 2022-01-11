@@ -14,7 +14,6 @@ import {
     MDBCol
 } from 'mdb-react-ui-kit';
 import { CartProduct } from '../lib/shopApi';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 
@@ -42,7 +41,7 @@ export default function CartModal({ basicModal, setBasicModal, toggleShow }: { b
                 });
                 setCartTotal(parseFloat(totalPrice as unknown as string))
             })
-    }, [])
+    }, [basicModal])
 
     const routeToOrder = () => {
         toggleShow()

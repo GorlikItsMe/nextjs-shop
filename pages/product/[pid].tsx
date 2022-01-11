@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput } from 'mdb-react-ui-kit';
@@ -6,6 +6,16 @@ import { GetServerSideProps } from 'next';
 import { getProductById, ShopApiProduct } from '../../lib/shopApi';
 
 export default function ProductPreview({ product }: { product: ShopApiProduct }) {
+    const [amount, setAmount] = useState(1);
+    const [_document, set_document] = useState(null)
+
+    useEffect(() => {
+        set_document(document)
+    }, [])
+
+    const onChangeAmount = (e) => {
+        setAmount(parseInt(e.target.value));
+    }
 
     const addToCart = () => {
         fetch("/api/cart/add", {
@@ -13,11 +23,12 @@ export default function ProductPreview({ product }: { product: ShopApiProduct })
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
                 productId: product.id,
-                amount: 1
+                amount: amount
             })
         })
             .then(response => {
                 console.log(response);
+                (window as Window & typeof globalThis & { openCart }).openCart()
             })
             .catch(err => {
                 console.error(err);
@@ -44,7 +55,7 @@ export default function ProductPreview({ product }: { product: ShopApiProduct })
                         <MDBContainer>
                             <MDBRow className="text-center">
                                 <MDBCol size='md-6' className='col-example'>
-                                    <MDBInput label='Ilość' id='typeNumber' type='number' min='1' value='1'/>
+                                    <MDBInput label='Ilość' id='typeNumber' type='number' min='1' value={`${amount}`} onChange={onChangeAmount} />
                                 </MDBCol>
                                 <MDBCol size='md-6' className='col-example'>
                                     <MDBBtn outline rounded href='#' className="btn-lg" onClick={addToCart}>
