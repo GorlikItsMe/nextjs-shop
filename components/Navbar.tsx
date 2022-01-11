@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MDBContainer,
   MDBNavbar,
@@ -14,19 +14,10 @@ import {
   MDBDropdownMenu,
   MDBDropdownItem,
   MDBDropdownLink,
-  MDBCollapse,
-  MDBBtn,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBModalFooter,
-  MDBRow,
-  MDBCol
+  MDBCollapse
 } from 'mdb-react-ui-kit';
 import Link from 'next/link'
+import CartModal from './CartModal';
 
 export default function Navbar() {
   const [showBasic, setShowBasic] = useState(false);
@@ -71,13 +62,13 @@ export default function Navbar() {
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
                   <MDBDropdownItem>
-                  <Link href="/politykaPrywatnosci">
-                    <a><MDBDropdownLink>Polityka Prywatności</MDBDropdownLink></a>
+                    <Link href="/politykaPrywatnosci">
+                      <a><MDBDropdownLink>Polityka Prywatności</MDBDropdownLink></a>
                     </Link>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                  <Link href="/regulamin">
-                    <a><MDBDropdownLink>Regulamin</MDBDropdownLink></a>
+                    <Link href="/regulamin">
+                      <a><MDBDropdownLink>Regulamin</MDBDropdownLink></a>
                     </Link>
                   </MDBDropdownItem>
                 </MDBDropdownMenu>
@@ -86,7 +77,7 @@ export default function Navbar() {
 
             <MDBNavbarItem>
               <Link href="/kontakt">
-              <a><MDBNavbarLink><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink></a>
+                <a><MDBNavbarLink><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink></a>
               </Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
@@ -103,44 +94,8 @@ export default function Navbar() {
     </MDBNavbar>
 
     {/* MODAL */}
-    {basicModal &&
-      <MDBModal show={true} setShow={setBasicModal} tabIndex='-1'>
-        <MDBModalDialog>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle><MDBIcon fas icon='shopping-cart'></MDBIcon> Twój koszyk</MDBModalTitle>
-              <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody>
-              {/* BRAK PRODUKTÓW W KOSZTYKU */}
-              <div className="alert alert-danger" role="alert" data-mdb-color="danger">
-                Brak produktów w koszyku
-              </div>
-
-              {/* Produkt w koszyku */}
-              <MDBContainer>
-                <MDBRow>
-                  <MDBCol size='md-6' className='col-example'>
-                    HUAWEI P30 PRO
-                  </MDBCol>
-                  <MDBCol size='md-6' className='col-example'>
-                    Cena: 2333.00 zł
-                  </MDBCol>
-                </MDBRow>
-              </MDBContainer>
-              <hr />
-              Kwota do zapłaty: 2333.00 zł
-            </MDBModalBody>
-
-            <MDBModalFooter>
-              <MDBBtn outline rounded className='mx-2' color='danger' onClick={toggleShow}>
-                <MDBIcon fas icon='times'></MDBIcon> Zamknij
-              </MDBBtn>
-              <MDBBtn outline rounded color='success'>Przejdź do zamówienia <MDBIcon fas icon='long-arrow-alt-right'></MDBIcon></MDBBtn>
-            </MDBModalFooter>
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
+    {
+      <CartModal basicModal={basicModal} setBasicModal={setBasicModal} toggleShow={toggleShow} />
     }
   </>
   );
