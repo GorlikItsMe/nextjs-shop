@@ -23,7 +23,7 @@
     "remark-html": "15.0.1"
   },
   "devDependencies": {
-    "@types/cookies": "^0.7.7",
+    "@types/cookies": "0.7.7",
     "@types/node": "16.11.19",
     "@types/react": "17.0.38",
     "prisma": "3.7.0",
