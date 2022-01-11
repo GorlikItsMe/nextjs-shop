@@ -5,6 +5,7 @@ export interface CartProduct {
   id: number;
   name: string;
   desc: string;
+  imageLink: string;
   price: Prisma.Decimal;
   amount: number;
   categoryId: number;
