@@ -37,7 +37,7 @@ export default function Navbar() {
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
         <Link href="/">
-          <MDBNavbarBrand>Sklep NextJS</MDBNavbarBrand>
+          <a><MDBNavbarBrand>Sklep NextJS</MDBNavbarBrand></a>
         </Link>
 
         <MDBNavbarToggler
@@ -53,14 +53,14 @@ export default function Navbar() {
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem>
               <Link href="/">
-                <MDBNavbarLink active aria-current='page'>
+                <a><MDBNavbarLink active aria-current='page'>
                   <MDBIcon fas icon='home'></MDBIcon> Strona Główna
-                </MDBNavbarLink>
+                </MDBNavbarLink></a>
               </Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <Link href="/">
-                <MDBNavbarLink><MDBIcon fas icon='store-alt'></MDBIcon> Sklep</MDBNavbarLink>
+                <a><MDBNavbarLink><MDBIcon fas icon='store-alt'></MDBIcon> Sklep</MDBNavbarLink></a>
               </Link>
             </MDBNavbarItem>
 
@@ -71,10 +71,14 @@ export default function Navbar() {
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Polityka Prywatności</MDBDropdownLink>
+                  <Link href="/politykaPrywatnosci">
+                    <a><MDBDropdownLink>Polityka Prywatności</MDBDropdownLink></a>
+                    </Link>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Regulamin</MDBDropdownLink>
+                  <Link href="/regulamin">
+                    <a><MDBDropdownLink>Regulamin</MDBDropdownLink></a>
+                    </Link>
                   </MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
@@ -82,7 +86,7 @@ export default function Navbar() {
 
             <MDBNavbarItem>
               <Link href="/kontakt">
-                <MDBNavbarLink><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink>
+              <a><MDBNavbarLink><MDBIcon fas icon='envelope'></MDBIcon> Kontakt</MDBNavbarLink></a>
               </Link>
             </MDBNavbarItem>
             <MDBNavbarItem>

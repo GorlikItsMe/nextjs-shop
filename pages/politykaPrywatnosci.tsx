@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdb-react-ui-kit';
+import Link from 'next/link'
 export default function politykaPrywatnosci() {
     return (
         <Layout>
@@ -53,9 +54,11 @@ export default function politykaPrywatnosci() {
                                 <MDBCardBody>
                                     <MDBCardTitle>Skontaktuj się z Nami</MDBCardTitle>
                                     <MDBCardText>
-                                        <MDBBtn size='lg' className='m-1' style={{ backgroundColor: '#ffac44' }} href='#'>
-                                            <MDBIcon fas icon='envelope' />
-                                        </MDBBtn>
+                                        <Link href="/kontakt">
+                                            <MDBBtn size='lg' className='m-1' style={{ backgroundColor: '#ffac44' }}>
+                                                <MDBIcon fas icon='envelope' />
+                                            </MDBBtn>
+                                        </Link>
                                     </MDBCardText>
                                 </MDBCardBody>
                             </MDBCard>
