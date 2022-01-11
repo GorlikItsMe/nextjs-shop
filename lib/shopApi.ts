@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import { Prisma, Product } from "@prisma/client";
 import prisma from "../lib/prisma";
 
 export interface CartProduct {
@@ -10,6 +10,38 @@ export interface CartProduct {
   amount: number;
   categoryId: number;
   categoryName: String;
+}
+
+export interface ShopApiProduct {
+  id: number;
+  name: string;
+  desc: string;
+  imageLink: string;
+  price: number;
+}
+
+export async function getProductById(
+  productId: number
+): Promise<ShopApiProduct> {
+  let productObj = await prisma.product.findFirst({
+    where: {
+      id: productId,
+      published: true,
+      stockAmount: {
+        not: 0,
+      },
+    },
+    select: {
+      id: true,
+      name: true,
+      desc: true,
+      imageLink: true,
+      price: true,
+    },
+  });
+  // dumb fix, json dont like decimal
+  productObj.price = parseFloat(productObj.price as unknown as string);
+  return productObj;
 }
 
 export async function getCart(cartId: number): Promise<CartProduct[]> {

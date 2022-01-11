@@ -31,6 +31,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   // do
+  console.log(`dodaj produkt do cart_id ${cartId}`);
   await addProductToCart(cartId, req.body.productId, req.body.amount);
 
   res.status(200).json({ message: "Product added to cart" });

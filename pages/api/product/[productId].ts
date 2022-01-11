@@ -1,5 +1,6 @@
 import prisma from "../../../lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
+import { getProductById } from "../../../lib/shopApi";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const productId = req.query["productId"] as string;
@@ -8,22 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).json({ message: "Id must be number" });
   }
 
-  const productObj = await prisma.product.findFirst({
-    where: {
-      id: pid,
-      published: true,
-      stockAmount: {
-        not: 0,
-      },
-    },
-    select: {
-      id: true,
-      name: true,
-      desc: true,
-      imageLink: true,
-      price: true,
-    },
-  });
+  const productObj = await getProductById(pid);
   if (productObj == undefined) {
     res.status(404).json({ error: "not found" });
     return;

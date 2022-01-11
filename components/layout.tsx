@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
+import { useEffect } from 'react'
 
 const name = '[Your Name]'
 export const siteTitle = 'Next.js Sample Website'
@@ -17,6 +18,9 @@ export default function Layout({
   children: React.ReactNode
   home?: boolean
 }) {
+  useEffect(() => {
+    fetch("/api/cart/setup");
+  }, []);
   return (
     <MDBContainer fluid>
       <Head>
@@ -41,7 +45,7 @@ export default function Layout({
           <h4 className='mb-3'>Zachęcamy do zakupów</h4><br />
           <h4 className='mb-3'>Kod promocyjny: WELCOME15*</h4>
           <p className='mb-3'>*Kod obniża cenę o 15% przy zakupach za min. 100zł</p>
-          <Link href="/sklep">
+          <Link href="/">
             <a><MDBBtn outline rounded>
               Sprawdź produkty!
             </MDBBtn></a>
