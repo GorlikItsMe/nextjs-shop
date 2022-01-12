@@ -1,4 +1,3 @@
-import { Prisma, Product } from "@prisma/client";
 import prisma from "../lib/prisma";
 
 export interface CartProduct {

@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { addProductToCart } from "../../../lib/shopApi";
 import assert from "assert";
 import prisma from "../../../lib/prisma";
 import Cookies from "cookies";
@@ -92,7 +91,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const cookies = new Cookies(req, res);
   const dtNow = new Date();
   cookies.set("cart_id", "0", { expires: dtNow, httpOnly: true });
-  
+
   res.status(200).json({ message: "Zamówienie zostało złożone" });
   return;
 };
