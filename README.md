@@ -1,61 +1,21 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Nextjs-shop
 
-# Setup
+Projekt na studia
 
-Next.js
+Wykorzystane technologie:
 
-```bash
-npm install
-npm run dev
-npm build
-```
+- Next.js (Framework)
+- Typescript
+- Prisma (Database ORM)
+- Material Design Bootstrap (Style)
+- Vercel (Deployment env)
 
-Prisma (database)
+## Setup
 
-```bash
-npx prisma db push # synchronizowane bazy danych
-npx prisma studio # tryb studia (łatwe edytowanie bazy danych)
-```
-
-## Examples (what i will propably use in future)
-
-```ts
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: { name: true },
-      },
-    },
-  });
-  return { props: { feed } };
-};
-```
-
-```
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const post = await prisma.post.findUnique({
-    where: {
-      id: Number(params?.id) || -1,
-    },
-    include: {
-      author: {
-        select: { name: true },
-      },
-    },
-  });
-  return {
-    props: post,
-  };
-};
-```
-
-https://vercel.com/guides/nextjs-prisma-postgres
-
-## Database
-
-```bash
-yarn db:migrate
-yarn db:push
-```
+1. Potrzebujesz jakiejś bazy danych
+2. Skopiuj `.env.example` do `.env` i uzupełnij `DATABASE_URL`
+3. `yarn` // instalowanie bibliotek
+4. `yarn db:push` // przygotuj baze danych
+5. `yarn dev` // środowisko developerskie
+6. `yarn build`
+7. `yarn db:studio` // uruchom klienta do przeglądania bazy danych
