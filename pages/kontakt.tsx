@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBInput, } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBInput, MDBTextArea } from 'mdb-react-ui-kit';
 import style from '../styles/kontakt.module.css'
 export default function kontakt() {
     return (
@@ -54,7 +54,7 @@ export default function kontakt() {
                                             <MDBInput label='Adres E-mail' id='form1' type='text' />
                                         </div>
                                         <div className="form-outline mb-4">
-                                            <MDBInput label='Treść wiadomości' id='textAreaExample' textarea rows={4} />
+                                            <MDBTextArea label='Treść wiadomości' id='textAreaExample' rows={4} />
                                         </div>
                                         <MDBBtn outline rounded>
                                             Wyślij wiadomość <MDBIcon fas icon='paper-plane'></MDBIcon>

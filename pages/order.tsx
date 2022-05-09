@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput, MDBRadio, MDBCheckbox, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput, MDBRadio, MDBCheckbox, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBTable, MDBTableHead, MDBTableBody, MDBTextArea } from 'mdb-react-ui-kit';
 import { CartProduct } from '../lib/shopApi';
 import { useRouter } from 'next/router';
 export default function Order() {
@@ -155,7 +155,7 @@ export default function Order() {
                 <MDBInput label='Adres E-mail' name='email' type='email' value={formEmail} onChange={onChange} />
               </div>
               <div className="form-outline mb-4">
-                <MDBInput label='Uwagi do zamówienia' name='extraDetails' textarea rows={4} value={formExtraDetails} onChange={onChange} />
+                <MDBTextArea label='Uwagi do zamówienia' name='extraDetails' rows={4} value={formExtraDetails} onChange={onChange} />
               </div>
             </form>
           </MDBCol>
@@ -213,7 +213,7 @@ export default function Order() {
                   <p className="mt-4">
                     Twoje dane osobowe będą użyte do przetworzenia twojego zamówienia, obsługi twojej wizyty na naszej stronie oraz dla innych celów o których mówi nasza polityka prywatności.
                   </p>
-                  <MDBCheckbox name='flexCheck' value={formAcceptTos} id='flexCheckDefault' label='Przeczytałem/am i akceptuję regulamin *' onChange={() => { setFormAcceptTos(!formAcceptTos) }} />
+                  <MDBCheckbox name='flexCheck' checked={formAcceptTos} id='flexCheckDefault' label='Przeczytałem/am i akceptuję regulamin *' onChange={() => { setFormAcceptTos(!formAcceptTos) }} />
                 </MDBCardText>
                 <MDBBtn outline rounded onClick={acceptOrder}>
                   Kupuje i płacę <MDBIcon fas icon='long-arrow-alt-right'></MDBIcon>

@@ -51,7 +51,7 @@ export default function CartModal({ basicModal, setBasicModal, toggleShow }: { b
     if (!_document) { return <div style={{ display: "none" }}></div> }
 
     return (
-        <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1' closeOnEsc={true}>
+        <MDBModal show={basicModal} setShow={setBasicModal} tabIndex={-1} closeOnEsc={true}>
             <MDBModalDialog>
                 <MDBModalContent>
                     <MDBModalHeader>
