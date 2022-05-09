@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <MDBFooter backgroundColor='light' className='text-center text-lg-left mt-5'>
+    <MDBFooter bgColor='light' className='text-center text-lg-left mt-5'>
       <MDBContainer className='p-4'>
         <MDBRow>
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
