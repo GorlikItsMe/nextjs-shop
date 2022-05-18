@@ -17,3 +17,51 @@ Cookie: cart_id=1
     "amount": 1
 }
 
+
+
+###
+# @name Register
+POST {{baseUrl}}/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "email@test.pl",
+    "password": "secretpassword"
+}
+
+
+###
+# @name Login
+POST {{baseUrl}}/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "email@test.pl",
+    "password": "secretpassword"
+}
+
+
+###
+# @name Logout
+POST {{baseUrl}}/auth/logout HTTP/1.1
+Content-Type: application/json
+
+
+###
+# @name Me
+GET {{baseUrl}}/me HTTP/1.1
+Content-Type: application/json
+
+
+###
+# @name Me
+GET {{baseUrl}}/me HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MX0sImlhdCI6MTY1Mjg5MTk0MSwiZXhwIjoxNjUyODkyMDAxLCJhdWQiOiIxIn0.gJSYz6_1-1HWCDjv0jXvkZ1gUIZCH1BqkXREKS3TJoM
+
+
+###
+# @name RefreshToken
+POST {{baseUrl}}/auth/refresh-token HTTP/1.1
+Content-Type: application/json
+
