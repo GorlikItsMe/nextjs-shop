@@ -7,6 +7,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     result = await verifyAccessToken(req, res);
   } catch (error) {
+    if (error.message == "Unauthorized") {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
     return res.status(400).json({ message: error.message });
   }
 
