@@ -54,13 +54,15 @@ export const verifyAccessToken = (
           return;
         }
         //@ts-ignore
+        const userId: number = payload?.user?.userId;
         const user = await prisma.user.findUnique({
-          where: { id: payload?.user?.userId },
+          where: { id: userId },
         });
         if (user?.access_token !== token) {
           reject(new Error("Unauthorized"));
           return;
         }
+        //@ts-ignore
         resolve(payload);
         return;
       }
