@@ -39,9 +39,9 @@ export default function Footer() {
           </MDBCol>
 
           <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase mb-0'><MDBIcon fas icon='file-pdf'></MDBIcon> Dokumenty</h5>
+            <h5 className='text-uppercase'><MDBIcon fas icon='file-pdf'></MDBIcon> Dokumenty</h5>
 
-            <ul className='list-unstyled'>
+            <ul className='list-unstyled mb-0'>
               <li>
                 <Link href="/politykaPrywatnosci">
                   <a className='text-dark'>Polityka Prywatności</a>
