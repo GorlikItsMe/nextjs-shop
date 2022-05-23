@@ -901,10 +901,10 @@ mdb-react-ui-kit@3.0.0:
     clsx "1.1.1"
     react-popper "2.2.4"
 
-mdb-ui-kit@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/mdb-ui-kit/-/mdb-ui-kit-4.0.0.tgz#95042badf807196725edcb8d6d9f4030a7fc536d"
-  integrity sha512-aJNTw1nitPhZyQ3gM+qdBiHbtfUFHQ2+1w4g2wZe6AdyAAp+771sKR7ETUK8h39VS9LiyZLR6GycT+IvT1M1fA==
+mdb-ui-kit@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/mdb-ui-kit/-/mdb-ui-kit-4.1.0.tgz#add01ba70dd7a1243ce623d12e81d41f33048d85"
+  integrity sha512-mI8MdSO/nDKr8E8vF9sb1EPnyiEYaD+KBeHZzPQLtf8XT4unG4mtg+Jg2gq/bigIwcstZvm0iLBXHkkEAZewEQ==
 
 mdurl@^1.0.0:
   version "1.0.1"
